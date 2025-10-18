@@ -14,11 +14,18 @@
         .hero-bg {
             background-color: #f0f7f4;
         }
-        /* Glass effect for the sticky header */
+        /* Glass effect for the sticky header on scroll */
         header.sticky {
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px); /* For Safari */
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        /* Glass effect for the mobile menu */
+        #mobile-menu {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .cta-button {
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Bouncier transition */
@@ -31,7 +38,6 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             background-color: rgba(255, 255, 255, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            /* Glassmorphism requires backdrop-filter */
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
         }
@@ -58,7 +64,7 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-colors duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-teal-600">TalkToCare</a>
             <div class="hidden md:flex items-center space-x-6">
@@ -74,11 +80,11 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-            <a href="#about" class="block text-gray-600 hover:text-teal-600">About</a>
-            <a href="#services" class="block text-gray-600 hover:text-teal-600">Services</a>
-            <a href="#therapists" class="block text-gray-600 hover:text-teal-600">Therapists</a>
-            <a href="#contact" class="block text-gray-600 hover:text-teal-600">Contact</a>
-            <a href="#contact" class="block bg-teal-600 text-white text-center mt-2 px-5 py-2 rounded-full font-semibold hover:bg-teal-700 cta-button">Book a Session</a>
+            <a href="#about" class="block text-gray-600 hover:text-teal-600 py-2">About</a>
+            <a href="#services" class="block text-gray-600 hover:text-teal-600 py-2">Services</a>
+            <a href="#therapists" class="block text-gray-600 hover:text-teal-600 py-2">Therapists</a>
+            <a href="#contact" class="block text-gray-600 hover:text-teal-600 py-2">Contact</a>
+            <a href="#contact" class="block bg-teal-600 text-white text-center mt-2 px-5 py-3 rounded-full font-semibold hover:bg-teal-700 cta-button">Book a Session</a>
         </div>
     </header>
 
@@ -87,9 +93,9 @@
 
         <!-- Hero Section -->
         <section class="hero-bg">
-            <div class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="container mx-auto px-6 py-16 md:py-28 flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 fade-in-up">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">Empathetic Support for India's Students</h1>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">Empathetic Support for India's Students</h1>
                     <p class="text-lg text-gray-600 mb-8">Connect with qualified therapists online. Confidential, convenient, and compassionate mental wellness support, right from your screen.</p>
                     <a href="#contact" class="bg-teal-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-700 cta-button">Schedule Your Free Consultation</a>
                 </div>
@@ -100,10 +106,10 @@
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="py-20">
+        <section id="about" class="py-16 sm:py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">Your Safe Space to Talk and Heal</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Your Safe Space to Talk and Heal</h2>
                     <p class="text-gray-600 mt-2 max-w-2xl mx-auto">TalkToCare is a pan-India initiative dedicated to bridging the gap between students and mental health professionals. We believe every student deserves access to quality mental healthcare to navigate academic pressure, personal challenges, and the journey of self-discovery.</p>
                 </div>
                 <!-- How it works -->
@@ -134,10 +140,10 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
+        <section id="services" class="py-16 sm:py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">Our Areas of Support</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Our Areas of Support</h2>
                     <p class="text-gray-600 mt-2">We provide support for a wide range of student-centric issues.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -170,10 +176,10 @@
         </section>
 
         <!-- Meet Our Therapists Section -->
-        <section id="therapists" class="py-20">
+        <section id="therapists" class="py-16 sm:py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">Our Compassionate Therapists</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Our Compassionate Therapists</h2>
                     <p class="text-gray-600 mt-2">Meet some of our experienced and empathetic professionals.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -203,10 +209,10 @@
         </section>
         
        <!-- Testimonials Section -->
-        <section class="py-20 bg-teal-50">
+        <section class="py-16 sm:py-20 bg-teal-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">What Students Say About Us</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">What Students Say About Us</h2>
                 </div>
                  <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-md animated-card">
@@ -222,10 +228,10 @@
         </section>
 
         <!-- Contact / Booking Section -->
-        <section id="contact" class="py-20 bg-white">
+        <section id="contact" class="py-16 sm:py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">Ready to Take the First Step?</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Ready to Take the First Step?</h2>
                     <p class="text-gray-600 mt-2">Fill out the form below to book your first session or to ask any questions.</p>
                 </div>
                 <div class="max-w-xl mx-auto">
@@ -304,6 +310,16 @@
                     mobileMenu.classList.add('hidden');
                 }
             });
+        });
+
+        // Sticky header with glass effect on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
         });
     </script>
 </body>
