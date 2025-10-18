@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalkToCare - Connecting Students and Therapists in India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #f0f7f4;
+        }
+        /* Glass effect for the sticky header */
+        header.sticky {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+        }
+        .cta-button {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Bouncier transition */
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05); /* Bouncier hover effect */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        .animated-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* Glassmorphism requires backdrop-filter */
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .animated-card:hover {
+            transform: translateY(-8px) scale(1.03); /* Bouncier hover effect */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        /* Animation for elements to fade in and up */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-teal-600">TalkToCare</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-teal-600">About</a>
+                <a href="#services" class="text-gray-600 hover:text-teal-600">Services</a>
+                <a href="#therapists" class="text-gray-600 hover:text-teal-600">Therapists</a>
+                <a href="#contact" class="text-gray-600 hover:text-teal-600">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:block bg-teal-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-teal-700 cta-button">Book a Session</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i class="fas fa-bars text-2xl text-teal-600"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#about" class="block text-gray-600 hover:text-teal-600">About</a>
+            <a href="#services" class="block text-gray-600 hover:text-teal-600">Services</a>
+            <a href="#therapists" class="block text-gray-600 hover:text-teal-600">Therapists</a>
+            <a href="#contact" class="block text-gray-600 hover:text-teal-600">Contact</a>
+            <a href="#contact" class="block bg-teal-600 text-white text-center mt-2 px-5 py-2 rounded-full font-semibold hover:bg-teal-700 cta-button">Book a Session</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero-bg">
+            <div class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 fade-in-up">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">Empathetic Support for India's Students</h1>
+                    <p class="text-lg text-gray-600 mb-8">Connect with qualified therapists online. Confidential, convenient, and compassionate mental wellness support, right from your screen.</p>
+                    <a href="#contact" class="bg-teal-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-700 cta-button">Schedule Your Free Consultation</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/a0d2eb/333333?text=Online+Therapy+Session" alt="Illustration of an online therapy session" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Your Safe Space to Talk and Heal</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">TalkToCare is a pan-India initiative dedicated to bridging the gap between students and mental health professionals. We believe every student deserves access to quality mental healthcare to navigate academic pressure, personal challenges, and the journey of self-discovery.</p>
+                </div>
+                <!-- How it works -->
+                <div class="grid md:grid-cols-3 gap-8 mt-16 text-center">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-100 text-teal-600 mx-auto mb-4 text-2xl">
+                           <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">1. Find Your Therapist</h3>
+                        <p class="text-gray-600">Browse profiles of our verified and compassionate therapists from all over India. Find the right fit for your needs.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-100 text-teal-600 mx-auto mb-4 text-2xl">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">2. Book a Session</h3>
+                        <p class="text-gray-600">Choose a convenient time and date. Our flexible scheduling works around your academic calendar.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-100 text-teal-600 mx-auto mb-4 text-2xl">
+                           <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">3. Connect via Video Call</h3>
+                        <p class="text-gray-600">Join your secure and private video session from anywhere. All you need is a stable internet connection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Our Areas of Support</h2>
+                    <p class="text-gray-600 mt-2">We provide support for a wide range of student-centric issues.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg animated-card">
+                        <h3 class="font-semibold text-lg mb-2">Academic Stress & Burnout</h3>
+                        <p class="text-gray-600">Develop coping strategies for exam pressure, performance anxiety, and academic burnout.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg animated-card">
+                        <h3 class="font-semibold text-lg mb-2">Anxiety & Depression</h3>
+                        <p class="text-gray-600">Receive professional guidance and therapy to manage symptoms of anxiety and depression.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg animated-card">
+                        <h3 class="font-semibold text-lg mb-2">Relationship Issues</h3>
+                        <p class="text-gray-600">Navigate challenges with friends, family, and romantic partners in a healthy way.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg animated-card">
+                        <h3 class="font-semibold text-lg mb-2">Career Counseling</h3>
+                        <p class="text-gray-600">Gain clarity on your career path, strengths, and future goals with expert guidance.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg animated-card">
+                        <h3 class="font-semibold text-lg mb-2">Self-Esteem & Confidence</h3>
+                        <p class="text-gray-600">Work on building self-worth, body positivity, and confidence in your abilities.</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg animated-card">
+                        <h3 class="font-semibold text-lg mb-2">Personal Growth</h3>
+                        <p class="text-gray-600">Embark on a journey of self-discovery, emotional intelligence, and personal development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet Our Therapists Section -->
+        <section id="therapists" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Our Compassionate Therapists</h2>
+                    <p class="text-gray-600 mt-2">Meet some of our experienced and empathetic professionals.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Therapist Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center animated-card">
+                        <img src="https://placehold.co/150x150/e2e8f0/333333?text=Dr.+Anjali" alt="Therapist profile picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-100">
+                        <h3 class="text-xl font-bold mb-1">Dr. Anjali Sharma</h3>
+                        <p class="text-gray-500 mb-2">Clinical Psychologist, PhD</p>
+                        <p class="text-gray-600">Specializes in cognitive behavioral therapy (CBT) for anxiety and depression in young adults. Based in Delhi.</p>
+                    </div>
+                    <!-- Therapist Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center animated-card">
+                        <img src="https://placehold.co/150x150/e2e8f0/333333?text=Mr.+Rohan" alt="Therapist profile picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-100">
+                        <h3 class="text-xl font-bold mb-1">Mr. Rohan Desai</h3>
+                        <p class="text-gray-500 mb-2">Counseling Psychologist, M.A.</p>
+                        <p class="text-gray-600">Focuses on stress management, career guidance, and mindfulness techniques. Based in Mumbai.</p>
+                    </div>
+                    <!-- Therapist Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center animated-card">
+                        <img src="https://placehold.co/150x150/e2e8f0/333333?text=Ms.+Priya" alt="Therapist profile picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-100">
+                        <h3 class="text-xl font-bold mb-1">Ms. Priya Singh</h3>
+                        <p class="text-gray-500 mb-2">Trauma-Informed Therapist</p>
+                        <p class="text-gray-600">Helps students work through past trauma and relationship difficulties. Based in Bangalore.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+       <!-- Testimonials Section -->
+        <section class="py-20 bg-teal-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">What Students Say About Us</h2>
+                </div>
+                 <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md animated-card">
+                        <p class="text-gray-600 mb-4">"Booking a session was so easy, and my therapist really understood what I was going through as an engineering student. It's made a huge difference."</p>
+                        <p class="font-bold text-teal-700">- Aarav, IIT Delhi</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md animated-card">
+                        <p class="text-gray-600 mb-4">"I was hesitant about online therapy, but TalkToCare made it feel so personal and secure. I finally have the tools to manage my exam anxiety."</p>
+                        <p class="font-bold text-teal-700">- Sneha, Christ University</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Booking Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Ready to Take the First Step?</h2>
+                    <p class="text-gray-600 mt-2">Fill out the form below to book your first session or to ask any questions.</p>
+                </div>
+                <div class="max-w-xl mx-auto">
+                    <form class="space-y-6" action="https://formspree.io/f/xdkwbqnl" method="POST">
+                        <div>
+                            <label for="name" class="font-medium">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="font-medium">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="you@example.com" required>
+                        </div>
+                         <div>
+                            <label for="phone" class="font-medium">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Your Phone Number">
+                        </div>
+                        <div>
+                            <label for="message" class="font-medium">Your Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Tell us a bit about what you're looking for..." required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-teal-600 text-white w-full md:w-auto px-10 py-3 rounded-full font-bold text-lg hover:bg-teal-700 cta-button">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-teal-400">TalkToCare</h3>
+            <p class="mt-2">Your partner in mental wellness.</p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="https://www.facebook.com/profile.php?id=61582486921622" target="_blank" class="hover:text-teal-400"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="https://twitter.com" target="_blank" class="hover:text-teal-400"><i class="fab fa-x-twitter text-2xl"></i></a>
+                <a href="https://www.instagram.com/afterhours._._/" target="_blank" class="hover:text-teal-400"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
+             <div class="flex justify-center flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mt-6 text-gray-300">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:aknotdivine@gmail.com" class="hover:text-teal-400">aknotdivine@gmail.com</a>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:7983921390" class="hover:text-teal-400">7983921390</a>
+                </div>
+            </div>
+             <p class="mt-8 text-gray-400">&copy; 2024 TalkToCare. All Rights Reserved.</p>
+             <div class="mt-2 text-gray-400 text-sm">
+                <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a>
+             </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu on link click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
